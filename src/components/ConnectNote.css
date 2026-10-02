@@ -1,0 +1,57 @@
+/* A control for a channel that exists but has not been confirmed for this
+   restaurant yet. It is never a dead button and never an invented link: it
+   says plainly what would go here and what has to be confirmed first. */
+.connect {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.connect__panel {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem;
+  align-items: start;
+  padding: 0.75rem 0.9rem;
+  border: 1px dashed var(--rule-strong);
+  border-radius: 3px;
+  background: rgba(217, 130, 43, 0.09);
+  font-size: var(--t-small);
+  line-height: 1.5;
+  color: var(--ink-2);
+  animation: connect-in 0.28s var(--ease-out) both;
+}
+
+.on-dark .connect__panel,
+.u-dark .connect__panel {
+  border-color: var(--rule-cream);
+  background: rgba(217, 130, 43, 0.16);
+  color: var(--cream-2);
+}
+
+.connect__mark {
+  display: grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.1rem;
+  border-radius: 50%;
+  background: var(--saffron);
+  color: var(--cocoa);
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--f-body);
+  flex: none;
+}
+
+@keyframes connect-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .connect__panel {
+    animation: none;
+  }
+}

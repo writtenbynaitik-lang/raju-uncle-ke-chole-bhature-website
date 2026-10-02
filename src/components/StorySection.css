@@ -1,0 +1,107 @@
+.story {
+  background: var(--paper-3);
+  border-block: 1px solid var(--rule-soft);
+}
+
+.story__in {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.story__title {
+  font-size: var(--t-display-sm);
+  margin: 0;
+}
+
+.story__body {
+  display: grid;
+  gap: clamp(0.9rem, 2.5vw, 1.25rem);
+  align-content: start;
+}
+
+.story__big {
+  font-family: var(--f-accent);
+  font-size: clamp(1.45rem, 6.4vw, 2.3rem);
+  line-height: 1.24;
+  color: var(--cocoa);
+  max-width: 22ch;
+}
+
+.story__p {
+  color: var(--ink-2);
+  max-width: 44ch;
+}
+
+/* The restaurant's own words, marked as theirs rather than presented as ours. */
+.story__quote {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+  padding-left: clamp(0.9rem, 2.5vw, 1.25rem);
+  border-left: 3px solid var(--saffron);
+}
+
+.story__quote q {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 7vw, 2.1rem);
+  line-height: 1;
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+  quotes: none;
+}
+
+.story__quote cite {
+  font-style: normal;
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.story__shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  align-items: start;
+}
+
+.story__fig {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--paper-4);
+}
+
+.story__fig .pic {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease-out);
+}
+
+.story__fig:hover .pic {
+  transform: scale(1.04);
+}
+
+.story__fig--b {
+  margin-top: clamp(1.25rem, 5vw, 3rem);
+}
+
+@media (min-width: 60rem) {
+  .story__in {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: start;
+  }
+  .story__head {
+    grid-column: 1 / 6;
+  }
+  .story__body {
+    grid-column: 1 / 6;
+  }
+  .story__shots {
+    grid-column: 7 / -1;
+    grid-row: 1 / 3;
+  }
+}

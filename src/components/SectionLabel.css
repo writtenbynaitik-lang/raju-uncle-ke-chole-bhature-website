@@ -1,0 +1,37 @@
+.slabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--f-body);
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--saffron-ink);
+  margin: 0;
+}
+
+.slabel::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  background: var(--saffron);
+  flex: none;
+}
+
+.slabel--plain::before {
+  display: none;
+}
+
+.slabel--n {
+  color: var(--muted);
+}
+
+.on-dark .slabel,
+.u-dark .slabel {
+  color: var(--saffron);
+}
+.on-dark .slabel--n,
+.u-dark .slabel--n {
+  color: var(--muted-dark);
+}

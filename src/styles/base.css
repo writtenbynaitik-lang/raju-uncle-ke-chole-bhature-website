@@ -1,0 +1,298 @@
+@import "./tokens.css";
+@import "./fonts.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* Anchors clear the sticky header. */
+  scroll-padding-top: calc(var(--nav-h) + 0.75rem);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* Nothing is allowed to push the page sideways. */
+  overflow-x: clip;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Every photograph carries width/height attributes so its box is reserved
+   before it loads — but those attributes also pin the *used* height, which
+   silently makes `aspect-ratio` a no-op. height:auto hands the ratio back to
+   CSS. Components that need a filled frame set height:100% and still win. */
+.pic {
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+  margin: 0;
+  /* Khand sits high in its em box; this pulls the optical top back in line. */
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ── Focus ────────────────────────────────────────────────────────────────
+   One visible ring everywhere, on a colour that carries on both grounds. */
+:focus-visible {
+  outline: 3px solid var(--chilli);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-dark :focus-visible,
+.u-dark :focus-visible {
+  outline-color: var(--saffron);
+}
+
+::selection {
+  background: var(--saffron);
+  color: var(--cocoa);
+}
+
+/* ── Layout helpers ─────────────────────────────────────────────────────── */
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-y);
+  position: relative;
+}
+
+.u-dark {
+  background: var(--cocoa);
+  color: var(--cream);
+}
+
+.rule {
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+  margin: 0;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--cocoa);
+  color: var(--cream);
+  padding: 0.75rem 1.25rem;
+  font-size: var(--t-small);
+  font-weight: 600;
+}
+.skip:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ── Type utilities ─────────────────────────────────────────────────────── */
+.lede {
+  font-size: var(--t-lede);
+  line-height: 1.45;
+  color: var(--ink-2);
+  max-width: 34ch;
+}
+.u-dark .lede {
+  color: var(--cream-2);
+}
+
+.accent {
+  font-family: var(--f-accent);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.deva {
+  font-family: var(--f-accent);
+  text-transform: none;
+  letter-spacing: 0;
+  /* Devanagari needs the extra room above the headline stroke. */
+  line-height: 1.5;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+.btn {
+  --btn-bg: var(--cocoa);
+  --btn-fg: var(--paper);
+  --btn-edge: var(--cocoa);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
+  min-height: 3rem; /* 48px touch target */
+  padding: 0.75rem 1.4rem;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: 1.5px solid var(--btn-edge);
+  border-radius: var(--r-pill);
+  font-family: var(--f-body);
+  font-size: var(--t-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    transform var(--dur) var(--ease),
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.btn .arw {
+  transition: transform var(--dur) var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -12px rgba(33, 26, 22, 0.55);
+}
+.btn:hover .arw {
+  transform: translate(2px, -2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--saffron {
+  --btn-bg: var(--saffron);
+  --btn-fg: var(--cocoa);
+  --btn-edge: var(--saffron);
+}
+.btn--saffron:hover {
+  --btn-bg: #e8913a;
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--ink);
+  --btn-edge: var(--rule-strong);
+}
+.btn--ghost:hover {
+  --btn-bg: var(--cocoa);
+  --btn-fg: var(--paper);
+  --btn-edge: var(--cocoa);
+}
+
+.u-dark .btn--ghost,
+.on-dark .btn--ghost {
+  --btn-fg: var(--cream);
+  --btn-edge: var(--rule-cream);
+}
+.u-dark .btn--ghost:hover,
+.on-dark .btn--ghost:hover {
+  --btn-bg: var(--cream);
+  --btn-fg: var(--cocoa);
+  --btn-edge: var(--cream);
+}
+
+.btn--sm {
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  font-size: var(--t-label);
+}
+
+/* ── Reveal ───────────────────────────────────────────────────────────────
+   Scoped to `.js`, which main.tsx sets before React mounts. If the script
+   never runs — blocked, failed, still downloading on a bad connection — the
+   content is simply visible rather than stranded at opacity 0. A reveal
+   animation is worth nothing next to a blank page in front of a client. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,605 @@
+{
+ "hero-plate": {
+  "file": "Chole Bhature from Nagpur.JPG",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   640,
+   900,
+   1300
+  ],
+  "focus": [
+   0.5,
+   0.52
+  ],
+  "grade": {},
+  "source": {
+   "id": 70,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Dheerajk88",
+   "page": "https://commons.wikimedia.org/wiki/File:Chole_Bhature_from_Nagpur.JPG",
+   "w": 4288,
+   "h": 2419
+  }
+ },
+ "hero-plate-p": {
+  "file": "Chole Bhature At Local Street.jpg",
+  "aspect": [
+   4,
+   5
+  ],
+  "widths": [
+   560,
+   860,
+   1140
+  ],
+  "focus": [
+   0.52,
+   0.5
+  ],
+  "grade": {},
+  "source": {
+   "id": 69,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Food From Your Street",
+   "page": "https://commons.wikimedia.org/wiki/File:Chole_Bhature_At_Local_Street.jpg",
+   "w": 1440,
+   "h": 1436
+  }
+ },
+ "featured-plate": {
+  "file": "Chole Bhature-Noida-UP-SP002.jpg",
+  "aspect": [
+   3,
+   2
+  ],
+  "widths": [
+   760,
+   1200,
+   1700
+  ],
+  "focus": [
+   0.44,
+   0.66
+  ],
+  "grade": {
+   "vig": 0.3
+  },
+  "source": {
+   "id": 74,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Sutapa Pal",
+   "page": "https://commons.wikimedia.org/wiki/File:Chole_Bhature-Noida-UP-SP002.jpg",
+   "w": 5875,
+   "h": 3917
+  },
+  "zoom": 0.64
+ },
+ "show-plate": {
+  "file": "Spicy Chole Bhature 2.jpg",
+  "aspect": [
+   4,
+   5
+  ],
+  "widths": [
+   520,
+   800,
+   1150
+  ],
+  "focus": [
+   0.52,
+   0.46
+  ],
+  "grade": {},
+  "source": {
+   "id": 79,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Satyajit Dhawale (Satyajit888)",
+   "page": "https://commons.wikimedia.org/wiki/File:Spicy_Chole_Bhature_2.jpg",
+   "w": 4872,
+   "h": 3747
+  }
+ },
+ "show-chole": {
+  "file": "Dhaba style channa masala.jpg",
+  "aspect": [
+   16,
+   10
+  ],
+  "widths": [
+   480,
+   760,
+   1100
+  ],
+  "focus": [
+   0.5,
+   0.46
+  ],
+  "grade": {
+   "bright": 0.94,
+   "sat": 1.06,
+   "warm": 0.1
+  },
+  "source": {
+   "id": 89,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Nitinshrinivas",
+   "page": "https://commons.wikimedia.org/wiki/File:Dhaba_style_channa_masala.jpg",
+   "w": 1823,
+   "h": 2341
+  }
+ },
+ "show-bhatura": {
+  "file": "Battura.jpg",
+  "aspect": [
+   5,
+   4
+  ],
+  "widths": [
+   420,
+   700,
+   1000
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "zoom": 0.9,
+  "grade": {},
+  "norm": {
+   "cast": 0.85
+  },
+  "source": {
+   "id": 0,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Adilakv",
+   "page": "https://commons.wikimedia.org/wiki/File:Battura.jpg",
+   "w": 3472,
+   "h": 3472
+  }
+ },
+ "dish-chole-bhature": {
+  "file": "CHOLE BHATURE.JPG",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "grade": {},
+  "source": {
+   "id": 59,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "AASTHA MITTAL",
+   "page": "https://commons.wikimedia.org/wiki/File:CHOLE_BHATURE.JPG",
+   "w": 5152,
+   "h": 3864
+  },
+  "zoom": 0.92
+ },
+ "dish-bhatura": {
+  "file": "Chole Bhature-Noida-UP-SP002.jpg",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.1,
+   0.26
+  ],
+  "grade": {},
+  "source": {
+   "id": 74,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Sutapa Pal",
+   "page": "https://commons.wikimedia.org/wiki/File:Chole_Bhature-Noida-UP-SP002.jpg",
+   "w": 5875,
+   "h": 3917
+  },
+  "zoom": 0.36
+ },
+ "dish-chole": {
+  "file": "Spicy Chole Bhature.jpg",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.52,
+   0.52
+  ],
+  "grade": {},
+  "source": {
+   "id": 80,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Satyajit Dhawale (Satyajit888)",
+   "page": "https://commons.wikimedia.org/wiki/File:Spicy_Chole_Bhature.jpg",
+   "w": 4968,
+   "h": 3688
+  }
+ },
+ "dish-paneer": {
+  "file": "Special Chola Bhatura.jpg",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.56,
+   0.52
+  ],
+  "grade": {},
+  "source": {
+   "id": 13,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Vinodmev93",
+   "page": "https://commons.wikimedia.org/wiki/File:Special_Chola_Bhatura.jpg",
+   "w": 3924,
+   "h": 2250
+  },
+  "zoom": 0.46
+ },
+ "dish-lassi": {
+  "file": "Lassi with malai and barfi 2.jpg",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.5,
+   0.48
+  ],
+  "grade": {},
+  "source": {
+   "id": 181,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Ravi Dwivedi",
+   "page": "https://commons.wikimedia.org/wiki/File:Lassi_with_malai_and_barfi_2.jpg",
+   "w": 2862,
+   "h": 2281
+  }
+ },
+ "dish-samosa": {
+  "file": "Indian Samosa by clumsy home chef.jpg",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "grade": {},
+  "source": {
+   "id": 365,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "ClumsyHomeChef",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Samosa_by_clumsy_home_chef.jpg",
+   "w": 2592,
+   "h": 1728
+  }
+ },
+ "dish-onion": {
+  "file": "Lemon pickle ( sweet).JPG",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "grade": {},
+  "source": {
+   "id": 278,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Chrystledsouza",
+   "page": "https://commons.wikimedia.org/wiki/File:Lemon_pickle_(_sweet).JPG",
+   "w": 4608,
+   "h": 3456
+  }
+ },
+ "dish-chutney": {
+  "file": "Coriander coconut chutney.JPG",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.5,
+   0.48
+  ],
+  "grade": {},
+  "source": {
+   "id": 109,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Nithyasrm",
+   "page": "https://commons.wikimedia.org/wiki/File:Coriander_coconut_chutney.JPG",
+   "w": 2848,
+   "h": 4272
+  }
+ },
+ "dish-chaas": {
+  "file": "লাচ্ছি.jpg",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.5,
+   0.46
+  ],
+  "zoom": 0.94,
+  "grade": {},
+  "source": {
+   "id": 191,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Rocky Masum",
+   "page": "https://commons.wikimedia.org/wiki/File:%E0%A6%B2%E0%A6%BE%E0%A6%9A%E0%A7%8D%E0%A6%9B%E0%A6%BF.jpg",
+   "w": 3000,
+   "h": 4000
+  }
+ },
+ "dish-chai": {
+  "file": "'Chai' Tea.jpg",
+  "aspect": [
+   4,
+   3
+  ],
+  "widths": [
+   400,
+   760
+  ],
+  "focus": [
+   0.5,
+   0.4
+  ],
+  "grade": {},
+  "source": {
+   "id": 315,
+   "licence": "CC BY-SA 3.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "author": "Ahmad Faiz Mustafa",
+   "page": "https://commons.wikimedia.org/wiki/File:%27Chai%27_Tea.jpg",
+   "w": 2816,
+   "h": 4816
+  }
+ },
+ "dish-spread": {
+  "file": "Chole Bhature 3.jpg",
+  "aspect": [
+   4,
+   5
+  ],
+  "widths": [
+   480,
+   760,
+   1100
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "grade": {},
+  "source": {
+   "id": 65,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Gannu03",
+   "page": "https://commons.wikimedia.org/wiki/File:Chole_Bhature_3.jpg",
+   "w": 13497,
+   "h": 10123
+  }
+ },
+ "story-hands": {
+  "file": "Gian di Lassi in Amritsar 04.jpg",
+  "aspect": [
+   4,
+   5
+  ],
+  "widths": [
+   520,
+   820,
+   1100
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "grade": {},
+  "source": {
+   "id": 170,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Kritzolina",
+   "page": "https://commons.wikimedia.org/wiki/File:Gian_di_Lassi_in_Amritsar_04.jpg",
+   "w": 3648,
+   "h": 5472
+  }
+ },
+ "story-urn": {
+  "file": "Gian di Lassi in Amritsar 05.jpg",
+  "aspect": [
+   4,
+   5
+  ],
+  "widths": [
+   420,
+   700,
+   940
+  ],
+  "focus": [
+   0.5,
+   0.46
+  ],
+  "grade": {},
+  "source": {
+   "id": 171,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Kritzolina",
+   "page": "https://commons.wikimedia.org/wiki/File:Gian_di_Lassi_in_Amritsar_05.jpg",
+   "w": 3648,
+   "h": 5472
+  }
+ },
+ "visit-counter": {
+  "file": "Gian di Lassi in Amritsar 08.jpg",
+  "aspect": [
+   16,
+   10
+  ],
+  "widths": [
+   640,
+   1000,
+   1400
+  ],
+  "focus": [
+   0.5,
+   0.52
+  ],
+  "grade": {},
+  "source": {
+   "id": 174,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Kritzolina",
+   "page": "https://commons.wikimedia.org/wiki/File:Gian_di_Lassi_in_Amritsar_08.jpg",
+   "w": 3648,
+   "h": 5472
+  }
+ },
+ "repeat-a": {
+  "file": "Chole bhature 2.jpg",
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   700
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "zoom": 0.94,
+  "grade": {},
+  "source": {
+   "id": 75,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Abhineshchandra1234",
+   "page": "https://commons.wikimedia.org/wiki/File:Chole_bhature_2.jpg",
+   "w": 3456,
+   "h": 4608
+  }
+ },
+ "repeat-b": {
+  "file": "Lassi with malai and barfi 2.jpg",
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   700
+  ],
+  "focus": [
+   0.5,
+   0.44
+  ],
+  "grade": {},
+  "source": {
+   "id": 181,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Ravi Dwivedi",
+   "page": "https://commons.wikimedia.org/wiki/File:Lassi_with_malai_and_barfi_2.jpg",
+   "w": 2862,
+   "h": 2281
+  },
+  "zoom": 0.9
+ },
+ "repeat-c": {
+  "file": "Pindi Chole with Poori or Chole Poori 02.jpg",
+  "aspect": [
+   1,
+   1
+  ],
+  "widths": [
+   400,
+   700
+  ],
+  "focus": [
+   0.5,
+   0.5
+  ],
+  "zoom": 0.92,
+  "grade": {},
+  "source": {
+   "id": 55,
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Best Ever Cooking Show SudShi",
+   "page": "https://commons.wikimedia.org/wiki/File:Pindi_Chole_with_Poori_or_Chole_Poori_02.jpg",
+   "w": 2703,
+   "h": 1800
+  }
+ }
+}

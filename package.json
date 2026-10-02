@@ -1,0 +1,27 @@
+{
+  "name": "raju-uncle-ke-chole-bhature",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Website concept created as a visual showcase for Raju Uncle Ke Chole Bhature, Katraj, Pune.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "lint": "oxlint",
+    "images": "python3 scripts/grade.py"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "subset-font": "^2.9.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}

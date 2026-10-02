@@ -1,0 +1,94 @@
+.tabs {
+  position: relative;
+}
+
+.tabs__scroll {
+  display: flex;
+  gap: 0.15rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 2px;
+  /* The row can scroll on a narrow phone without the page ever doing so. */
+  scroll-snap-type: x proximity;
+}
+.tabs__scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs__btn {
+  position: relative;
+  flex: none;
+  min-height: 2.9rem;
+  padding: 0.55rem 0.95rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 4.2vw, 1.35rem);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  scroll-snap-align: start;
+  transition: color var(--dur) var(--ease);
+}
+
+.tabs__btn:first-child {
+  padding-left: 0;
+}
+
+.tabs__btn:hover {
+  color: var(--ink-2);
+}
+
+.tabs__btn[aria-selected="true"] {
+  color: var(--ink);
+}
+
+.tabs__btn sup {
+  font-family: var(--f-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-left: 0.3rem;
+  vertical-align: super;
+}
+
+.tabs__rail {
+  position: relative;
+  height: 2px;
+  background: var(--rule);
+  margin-top: -2px;
+}
+
+/* One indicator that slides between tabs rather than four that blink. */
+.tabs__ink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--saffron);
+  transform-origin: left;
+  transition:
+    transform 0.38s var(--ease-out),
+    width 0.38s var(--ease-out);
+  will-change: transform, width;
+}
+
+.tabs__note {
+  margin-top: clamp(0.75rem, 2vw, 1rem);
+  color: var(--muted);
+  font-size: var(--t-small);
+  max-width: 46ch;
+  min-height: 2.6em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs__ink {
+    transition: none;
+  }
+}

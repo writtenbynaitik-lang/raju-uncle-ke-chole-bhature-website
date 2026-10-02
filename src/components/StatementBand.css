@@ -1,0 +1,84 @@
+/* A saffron strip that runs the brand's own words across the page — the
+   equivalent of the painted board above a counter. */
+.band {
+  background: var(--saffron);
+  color: var(--cocoa);
+  border-block: 1px solid rgba(33, 26, 22, 0.18);
+  overflow: hidden;
+  padding-block: clamp(0.55rem, 1.6vw, 0.85rem);
+}
+
+.band__track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: band-slide 34s linear infinite;
+}
+
+.band:hover .band__track {
+  animation-play-state: paused;
+}
+
+.band__group {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.band__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-inline: clamp(0.8rem, 2.2vw, 1.5rem);
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 3.4vw, 1.5rem);
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.band__item .deva {
+  font-family: var(--f-accent);
+  font-size: clamp(1.15rem, 3.8vw, 1.65rem);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.15;
+}
+
+.band__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cocoa);
+  flex: none;
+}
+
+@keyframes band-slide {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    /* Exactly one group's width, so the loop is seamless. */
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Static, so the words still read when the motion is switched off. The
+     duplicate group is only there to make the loop seamless, so it goes; it is
+     addressed by its aria-hidden wrapper rather than by position, because the
+     display:contents wrapper is what actually sits in the track. */
+  .band__track {
+    animation: none;
+    width: auto;
+  }
+  .band {
+    display: flex;
+    justify-content: center;
+  }
+  .band__track > [aria-hidden="true"] {
+    display: none;
+  }
+}

@@ -1,0 +1,177 @@
+.foot {
+  background: var(--cocoa-deep);
+  color: var(--cream-2);
+  padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.foot__in {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* ── The wordmark ───────────────────────────────────────────────────────── */
+.foot__mark {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.foot__word {
+  font-family: var(--f-display);
+  font-weight: 700;
+  /* Calibrated the same way as the hero: the longest line sets the measure. */
+  font-size: clamp(2.25rem, 13.5vw, 7.5rem);
+  line-height: 0.86;
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+  color: var(--cream);
+  margin: 0;
+}
+
+.foot__word em {
+  font-style: normal;
+  color: var(--saffron);
+}
+
+.foot__deva {
+  font-family: var(--f-accent);
+  font-size: clamp(1rem, 4vw, 1.4rem);
+  color: var(--muted-dark);
+  line-height: 1.6;
+}
+
+/* ── Columns ────────────────────────────────────────────────────────────── */
+.foot__cols {
+  display: grid;
+  gap: clamp(1.25rem, 4vw, 2rem);
+  grid-template-columns: 1fr 1fr;
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  border-top: 1px solid var(--rule-cream-soft);
+}
+
+.foot__col h3 {
+  font-family: var(--f-body);
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin: 0 0 0.7rem;
+}
+
+.foot__col li + li {
+  margin-top: 0.2rem;
+}
+
+.foot__col li > a,
+.foot__col li > button {
+  padding-block: 0.3rem;
+  min-height: 1.75rem;
+}
+
+.foot__col a,
+.foot__col p {
+  font-size: var(--t-small);
+  color: var(--cream-2);
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.foot__col a {
+  position: relative;
+  /* Keep the arrow on the same line as the word it belongs to. */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--dur) var(--ease);
+}
+.foot__col a:hover {
+  color: var(--saffron);
+}
+
+.foot__col button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: var(--t-small);
+  color: var(--cream-2);
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--dur) var(--ease);
+}
+.foot__col button:hover {
+  color: var(--saffron);
+}
+
+/* ── Fine print ─────────────────────────────────────────────────────────── */
+.foot__fine {
+  display: grid;
+  gap: 0.6rem;
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+  border-top: 1px solid var(--rule-cream-soft);
+  font-size: var(--t-label);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: #93826f;
+}
+
+.foot__concept {
+  color: #a3907c;
+}
+
+.foot__credits summary {
+  cursor: pointer;
+  color: #8e7b68;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0;
+  min-height: 2rem;
+}
+.foot__credits summary::-webkit-details-marker {
+  display: none;
+}
+.foot__credits summary::after {
+  content: "+";
+  color: var(--saffron);
+}
+.foot__credits[open] summary::after {
+  content: "–";
+}
+.foot__credits summary:hover {
+  color: var(--cream-2);
+}
+
+.foot__creditlist {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  max-height: 16rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.foot__creditlist li {
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  color: #93826f;
+}
+
+.foot__creditlist a {
+  color: #b2a08c;
+  text-underline-offset: 2px;
+}
+.foot__creditlist a:hover {
+  color: var(--saffron);
+}
+
+@media (min-width: 48rem) {
+  .foot__cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .foot__fine {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    column-gap: 2rem;
+  }
+}

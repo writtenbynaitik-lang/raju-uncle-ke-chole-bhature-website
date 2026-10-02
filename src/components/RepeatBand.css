@@ -1,0 +1,84 @@
+/* The rhythm of the place, told with photographs instead of star ratings. */
+.rep {
+  background: var(--cocoa);
+  color: var(--cream);
+  overflow: clip;
+}
+
+.rep__in {
+  display: grid;
+  gap: clamp(1.25rem, 3.5vw, 2rem);
+}
+
+.rep__title {
+  /* A supporting band, not a hero: at full display size the five lines
+     swamped the photographs they are supposed to introduce. */
+  font-size: var(--t-display-sm);
+  color: var(--cream);
+  margin: 0;
+}
+
+.rep__title span {
+  display: block;
+}
+
+.rep__title span:nth-child(2) {
+  color: var(--saffron);
+}
+
+/* Rozha One runs much wider than Khand at the same size, and its descenders
+   fall outside a 0.84 line box. Both are corrected here rather than by making
+   the whole headline smaller. */
+.rep__title span:nth-child(3) {
+  font-family: var(--f-accent);
+  font-size: 0.86em;
+  line-height: 1.12;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--cream);
+}
+
+.rep__note {
+  margin-top: clamp(0.75rem, 2vw, 1.1rem);
+  color: var(--muted-dark);
+  max-width: 40ch;
+  font-size: var(--t-small);
+}
+
+.rep__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.4rem, 1.6vw, 0.85rem);
+}
+
+.rep__fig {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--cocoa-2);
+}
+
+.rep__fig .pic {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease-out), filter 0.5s var(--ease);
+}
+
+.rep__fig:hover .pic {
+  transform: scale(1.05);
+}
+
+@media (min-width: 60rem) {
+  .rep__in {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: center;
+  }
+  .rep__head {
+    grid-column: 1 / 5;
+  }
+  .rep__row {
+    grid-column: 5 / -1;
+  }
+}

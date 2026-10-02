@@ -1,0 +1,301 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   The order drawer. A sheet on a phone, a panel on a desktop, the same code.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.drawer__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(22, 16, 13, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+.drawer__scrim.is-open {
+  opacity: 1;
+}
+
+.drawer {
+  position: fixed;
+  z-index: 81;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 92dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--paper);
+  border-top: 3px solid var(--saffron);
+  border-radius: 10px 10px 0 0;
+  box-shadow: var(--shadow-drawer);
+  transform: translateY(101%);
+  transition: transform 0.42s var(--ease-out);
+}
+.drawer.is-open {
+  transform: none;
+}
+
+/* ── Head ───────────────────────────────────────────────────────────────── */
+.drawer__head {
+  display: grid;
+  gap: 0.3rem;
+  padding: clamp(0.9rem, 3vw, 1.35rem) var(--gutter) 0.85rem;
+  border-bottom: 1px solid var(--rule-soft);
+  position: relative;
+}
+
+.drawer__title {
+  font-size: clamp(1.35rem, 6.4vw, 1.9rem);
+  margin: 0;
+  padding-right: 3rem;
+}
+
+.drawer__sub {
+  font-size: var(--t-small);
+  color: var(--muted);
+  max-width: 44ch;
+  padding-right: 2rem;
+}
+
+.drawer__close {
+  position: absolute;
+  top: clamp(0.65rem, 2.5vw, 1rem);
+  right: calc(var(--gutter) - 0.5rem);
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.drawer__close:hover {
+  background: var(--cocoa);
+  color: var(--paper);
+  border-color: var(--cocoa);
+}
+
+/* ── Body ───────────────────────────────────────────────────────────────── */
+.drawer__body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: clamp(0.9rem, 3vw, 1.35rem) var(--gutter);
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-content: start;
+}
+
+.drawer__group {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.drawer__glabel {
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--saffron-ink);
+}
+
+.pick {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid var(--rule-soft);
+  border-radius: 3px;
+  background: var(--paper-2);
+  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.pick.is-on {
+  border-color: var(--saffron);
+  background: var(--saffron-wash);
+}
+
+.pick__img {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--paper-3);
+}
+.pick__img .pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pick__name {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.05;
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.pick__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coriander);
+  margin-top: 0.15rem;
+}
+
+/* ── Stepper ────────────────────────────────────────────────────────────── */
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-pill);
+  background: var(--paper);
+}
+
+.step__b {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: none;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--ink);
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+.step__b:hover:not(:disabled) {
+  background: var(--cocoa);
+  color: var(--paper);
+}
+.step__b:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.step__n {
+  min-width: 1.5rem;
+  text-align: center;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Review step ────────────────────────────────────────────────────────── */
+.review {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.review__msg {
+  font-family: var(--f-body);
+  font-size: var(--t-small);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: clamp(0.8rem, 3vw, 1.1rem);
+  background: var(--paper-3);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--cocoa);
+  margin: 0;
+}
+
+.review__note {
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+
+/* ── Foot ───────────────────────────────────────────────────────────────── */
+.drawer__foot {
+  display: grid;
+  gap: 0.6rem;
+  padding: clamp(0.85rem, 3vw, 1.2rem) var(--gutter);
+  padding-bottom: max(clamp(0.85rem, 3vw, 1.2rem), env(safe-area-inset-bottom));
+  border-top: 1px solid var(--rule);
+  background: var(--paper-2);
+}
+
+.drawer__actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.drawer__actions .btn {
+  flex: 1 1 auto;
+}
+
+.drawer__fine {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.drawer__demo {
+  font-size: var(--t-label);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin: 0;
+}
+
+.drawer__clear {
+  flex: none;
+  padding: 0.35rem 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+  transition: color var(--dur) var(--ease);
+}
+.drawer__clear:hover {
+  color: var(--chilli);
+}
+
+@media (min-width: 48rem) {
+  .drawer {
+    left: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(30rem, 100%);
+    max-height: 100dvh;
+    border-radius: 0;
+    border-top: 0;
+    border-left: 3px solid var(--saffron);
+    transform: translateX(101%);
+  }
+  .drawer.is-open {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .drawer__scrim {
+    transition: none;
+  }
+}

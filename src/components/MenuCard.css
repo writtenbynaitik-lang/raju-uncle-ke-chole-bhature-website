@@ -1,0 +1,147 @@
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: var(--paper-2);
+  border: 1px solid var(--rule-soft);
+  border-radius: 3px;
+  overflow: hidden;
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--rule);
+}
+
+.card__frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper-3);
+}
+
+.card__frame .pic {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.card:hover .card__frame .pic {
+  transform: scale(1.05);
+}
+
+.card__tag {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.3rem 0.6rem;
+  background: var(--saffron);
+  color: var(--cocoa);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  max-width: calc(100% - 1.2rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card__body {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0.5rem;
+  padding: clamp(0.85rem, 3vw, 1.1rem);
+}
+
+.card__name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 5vw, 1.5rem);
+  line-height: 1;
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.card__name .deva {
+  font-size: 0.78em;
+  color: var(--saffron-ink);
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coriander);
+}
+
+/* The green square used on Indian menus for a vegetarian dish. */
+.veg {
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid var(--coriander);
+  border-radius: 2px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.veg::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coriander);
+}
+
+
+.card__blurb {
+  color: var(--ink-2);
+  font-size: var(--t-small);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--rule-soft);
+  margin-top: 0.25rem;
+}
+
+.card__price {
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+
+.card__add {
+  --btn-bg: transparent;
+  --btn-fg: var(--ink);
+  --btn-edge: var(--rule-strong);
+}
+.card__add:hover {
+  --btn-bg: var(--cocoa);
+  --btn-fg: var(--paper);
+  --btn-edge: var(--cocoa);
+}
+.card__add.is-added {
+  --btn-bg: var(--coriander);
+  --btn-fg: var(--paper);
+  --btn-edge: var(--coriander);
+}

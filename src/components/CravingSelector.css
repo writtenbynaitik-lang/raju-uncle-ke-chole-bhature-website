@@ -1,0 +1,199 @@
+/* The playful way in: pick a level of hunger, get a plate suggested for you. */
+.crave {
+  background: var(--paper);
+  overflow: clip;
+}
+
+.crave__in {
+  display: grid;
+  gap: clamp(1.25rem, 3.5vw, 2rem);
+}
+
+.crave__title {
+  font-size: var(--t-display);
+  margin: 0;
+}
+
+.crave__title .accent {
+  line-height: 1.08;
+  color: var(--chilli);
+  text-transform: none;
+}
+
+.crave__opts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.crave__opt {
+  position: relative;
+  display: grid;
+  gap: 0.25rem;
+  min-height: 3.5rem;
+  padding: 0.8rem 0.9rem;
+  text-align: left;
+  background: transparent;
+  border: 1.5px solid var(--rule);
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 4.4vw, 1.3rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.crave__opt:hover {
+  border-color: var(--rule-strong);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.crave__opt[aria-pressed="true"] {
+  background: var(--cocoa);
+  border-color: var(--cocoa);
+  color: var(--paper);
+}
+
+.crave__opt small {
+  font-family: var(--f-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.crave__opt[aria-pressed="true"] small {
+  color: var(--saffron);
+}
+
+/* ── The result panel ───────────────────────────────────────────────────── */
+.crave__out {
+  display: grid;
+  gap: clamp(0.9rem, 2.5vw, 1.25rem);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: var(--paper-3);
+  border-radius: 3px;
+  border: 1px solid var(--rule-soft);
+  animation: crave-in 0.36s var(--ease-out) both;
+}
+
+@keyframes crave-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crave__out {
+    animation: none;
+  }
+}
+
+.crave__line {
+  font-family: var(--f-accent);
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+  line-height: 1.3;
+  color: var(--cocoa);
+  max-width: 30ch;
+}
+
+.crave__list {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.crave__li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: var(--t-small);
+}
+
+.crave__li b {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+}
+
+.crave__li span {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.crave__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.crave__fine {
+  font-size: var(--t-label);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+@media (min-width: 30rem) {
+  .crave__opts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 60rem) {
+  .crave__in {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: start;
+  }
+  .crave__head {
+    grid-column: 1 / 6;
+  }
+  .crave__opts {
+    grid-column: 6 / -1;
+    grid-template-columns: repeat(2, 1fr);
+    align-self: start;
+  }
+  .crave__out {
+    grid-column: 6 / -1;
+  }
+  .crave__shot {
+    grid-column: 1 / 6;
+    grid-row: 2 / 4;
+  }
+}
+
+.crave__shot {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--paper-3);
+  display: none;
+}
+
+.crave__shot .pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  transition: transform 0.9s var(--ease-out);
+}
+
+@media (min-width: 60rem) {
+  .crave__shot {
+    display: block;
+  }
+}

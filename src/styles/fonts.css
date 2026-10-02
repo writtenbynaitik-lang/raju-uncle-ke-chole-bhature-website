@@ -1,0 +1,51 @@
+/* Self-hosted and subset: the page makes no third-party font request, and the
+   Devanagari faces carry only the handful of words the site actually sets. */
+
+@font-face {
+  font-family: "Khand";
+  src: url("/fonts/khand-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+2122, U+2191, U+2193, U+20B9;
+}
+@font-face {
+  font-family: "Khand";
+  src: url("/fonts/khand-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+2122, U+2191, U+2193, U+20B9;
+}
+@font-face {
+  font-family: "Khand";
+  src: url("/fonts/khand-700-deva.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+2122, U+2191, U+2193, U+20B9;
+}
+@font-face {
+  font-family: "Rozha One";
+  src: url("/fonts/rozha-one.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F;
+}
+@font-face {
+  font-family: "Rozha One";
+  src: url("/fonts/rozha-one-deva.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+200C-200D, U+25CC;
+}

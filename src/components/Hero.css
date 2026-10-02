@@ -1,0 +1,314 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   The hero is a poster, not a banner: the name is set at signage scale on warm
+   paper and the photograph is laid over the end of it, so the type runs behind
+   the plate rather than sitting politely beside it.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  padding-top: calc(var(--nav-h) + clamp(0.75rem, 3vw, 2rem));
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+  overflow: clip; /* the oversized type may exceed the gutter; never the page */
+}
+
+.hero__in {
+  display: grid;
+  gap: clamp(0.75rem, 2.5vw, 1.25rem);
+}
+
+/* ── Top metadata row ───────────────────────────────────────────────────── */
+.hero__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-wrap: wrap;
+}
+
+.hero__where {
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ── The lockup ─────────────────────────────────────────────────────────── */
+.hero__type {
+  --hero-size: var(--t-hero);
+  display: grid;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  /* The words are the composition; nothing may pad them apart. */
+  line-height: var(--lh-display);
+}
+
+.hero__owner {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 6vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--cocoa);
+  margin-bottom: clamp(0.3rem, 1.2vw, 0.7rem);
+}
+
+.hero__owner::after {
+  content: "";
+  height: 2px;
+  flex: 1 1 auto;
+  min-width: 1.5rem;
+  background: var(--saffron);
+}
+
+.hero__word {
+  display: block;
+  font-size: var(--hero-size);
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-display);
+  color: var(--cocoa);
+}
+
+/* "Bhature" is the longest word and sets the measure for the whole page. */
+.hero__word--2 {
+  position: relative;
+}
+
+/* ── The photograph ─────────────────────────────────────────────────────── */
+.hero__shot {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  /* Pulls the plate up over the tail of the type. */
+  margin-top: clamp(-2.6rem, -7vw, -1rem);
+}
+
+.hero__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--paper-3);
+  box-shadow: var(--shadow-lift);
+}
+
+.hero__frame .pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transform: scale(1.02);
+  transition: transform 1.2s var(--ease-out);
+}
+
+/* Three pills will not sit on one 375px row without looking cramped, and
+   dropping one would hide an action. So on a phone the primary takes the full
+   width and the two secondaries share the row beneath — deliberate, and it
+   makes Order the most tappable thing on the screen. */
+.hero__cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.hero__cta .btn:first-child {
+  grid-column: 1 / -1;
+}
+
+.hero__cta .btn {
+  padding-inline: 1rem;
+}
+
+@media (min-width: 30rem) {
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .hero__cta .btn {
+    padding-inline: 1.4rem;
+  }
+}
+
+.hero.is-ready .hero__frame .pic {
+  transform: none;
+}
+
+/* The steam label riding the corner of the frame. */
+.hero__stamp {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--saffron);
+  color: var(--cocoa);
+  font-family: var(--f-body);
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+
+.hero__stamp .deva {
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
+}
+
+/* ── The pitch ──────────────────────────────────────────────────────────── */
+.hero__say {
+  display: grid;
+  gap: clamp(0.9rem, 2.4vw, 1.4rem);
+  padding-top: clamp(0.5rem, 2vw, 1rem);
+}
+
+.hero__line {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: clamp(1.35rem, 6.4vw, 2.1rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--cocoa);
+  max-width: 22ch;
+}
+
+.hero__support {
+  font-family: var(--f-accent);
+  font-size: clamp(1.15rem, 5vw, 1.6rem);
+  line-height: 1.2;
+  color: var(--chilli);
+  margin-top: 0.3rem;
+}
+
+.hero__line em {
+  font-family: var(--f-accent);
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--chilli);
+}
+
+/* The accent phrase is the punchline; it should never break in half. Rozha One
+   runs wider than Khand at the same size, so the measure is set from it. */
+@media (min-width: 26rem) {
+  .hero__line em {
+    white-space: nowrap;
+  }
+}
+
+/* ── Load-in ────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__meta,
+  .hero__owner,
+  .hero__word,
+  .hero__shot,
+  .hero__line,
+  .hero__cta {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  .hero.is-ready .hero__meta,
+  .hero.is-ready .hero__owner,
+  .hero.is-ready .hero__word,
+  .hero.is-ready .hero__shot,
+  .hero.is-ready .hero__line,
+  .hero.is-ready .hero__cta {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.75s var(--ease-out),
+      transform 0.75s var(--ease-out);
+  }
+  .hero.is-ready .hero__meta { transition-delay: 0.02s; }
+  .hero.is-ready .hero__owner { transition-delay: 0.08s; }
+  .hero.is-ready .hero__word--1 { transition-delay: 0.14s; }
+  .hero.is-ready .hero__word--2 { transition-delay: 0.2s; }
+  .hero.is-ready .hero__shot { transition-delay: 0.1s; }
+  .hero.is-ready .hero__line { transition-delay: 0.3s; }
+  .hero.is-ready .hero__cta { transition-delay: 0.38s; }
+}
+
+/* ── Wide ───────────────────────────────────────────────────────────────── */
+@media (min-width: 48rem) {
+  .hero__frame .pic {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (min-width: 60rem) {
+  .hero {
+    /* Tight enough that the buttons are on the first screen at 1440x900. */
+    padding-top: calc(var(--nav-h) + 1rem);
+    padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .hero__in {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: clamp(1rem, 2vw, 2rem);
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .hero__meta {
+    grid-column: 1 / -1;
+    margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .hero__type {
+    /* Khand 700 advances "BHATURE" at 3.22em after tracking. The lockup owns
+       seven of twelve columns — 742px of a 1440 page — so 16vw lands the word
+       at 738px: hard against the photograph's edge, never under it. */
+    --hero-size: min(16vw, 14.5rem);
+    grid-column: 1 / 8;
+    grid-row: 2;
+  }
+
+  .hero__shot {
+    /* Spans both type rows, so the plate is the tallest thing on the screen
+       and the pitch tucks in beside it rather than under it. */
+    grid-column: 8 / -1;
+    grid-row: 2 / 4;
+    margin-top: clamp(1rem, 2vw, 1.75rem);
+    margin-right: calc(var(--gutter) * -0.4);
+    align-self: start;
+  }
+
+  .hero__frame .pic {
+    aspect-ratio: 5 / 6;
+  }
+
+  .hero__say {
+    grid-column: 1 / 8;
+    grid-row: 3;
+    margin-top: clamp(1.25rem, 3vw, 2.25rem);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--s-6);
+    flex-wrap: wrap;
+  }
+
+  .hero__line {
+    max-width: none;
+  }
+
+  .hero__pitch {
+    flex: 0 1 auto;
+  }
+}
+
+@media (min-width: 90rem) {
+  .hero__type {
+    --hero-size: 14.5rem;
+  }
+}

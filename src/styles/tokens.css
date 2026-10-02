@@ -1,0 +1,116 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   RAJU UNCLE KE CHOLE BHATURE — design tokens
+
+   The ground is warm paper, the colour of a cream tablecloth under afternoon
+   light. Ink is a cocoa brown, never black. Saffron is the brand's loud voice
+   and is rationed: it appears as a *surface* on light ground (dark ink on top,
+   5.9:1) and as *type* on dark ground (6.7:1) — never as small type on cream,
+   where it does not carry. Chilli red marks one thing per screen. Coriander
+   green does quiet work: veg dots, metadata, the odd rule.
+
+   Budget, roughly: 70% paper · 20% cocoa · 7% saffron · 3% chilli + coriander.
+   The photography brings the rest of the colour.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Paper ──────────────────────────────────────────────── */
+  --paper: #f7f1e5; /* the page */
+  --paper-2: #f2e9d8; /* alternate band */
+  --paper-3: #ebdfc8; /* card ground, inset panels */
+  --paper-4: #e2d3b8; /* the deepest cream, used for edges */
+
+  /* ── Cocoa ──────────────────────────────────────────────── */
+  --cocoa: #211a16; /* primary dark: type, dark sections */
+  --cocoa-deep: #16100d; /* footer, the bottom of the page */
+  --cocoa-2: #3a2c23; /* raised dark surface */
+  --cocoa-3: #4a392e; /* secondary type on paper */
+
+  /* ── Saffron ────────────────────────────────────────────── */
+  --saffron: #d9822b; /* surfaces, active states, the kadhai colour */
+  --saffron-deep: #b9651b; /* large display accents on paper (3.8:1) */
+  --saffron-ink: #94480f; /* small type on paper when it must be saffron (5.6:1) */
+  --saffron-wash: rgba(217, 130, 43, 0.14);
+
+  /* ── Chilli + coriander ─────────────────────────────────── */
+  --chilli: #a93226; /* one hot mark per screen (5.9:1 on paper) */
+  --chilli-deep: #8c2418;
+  --coriander: #5d6b42; /* veg dots, quiet metadata (5.1:1 on paper) */
+
+  /* ── Type colour ────────────────────────────────────────── */
+  --ink: var(--cocoa);
+  --ink-2: var(--cocoa-3);
+  --muted: #6b5b4a; /* 5.9:1 on paper, 5.0:1 on the deepest cream panel */
+  --cream: #f7f1e5; /* type on cocoa */
+  --cream-2: #dccfba;
+  --muted-dark: #a3907c; /* secondary type on cocoa, 5.4:1 */
+
+  /* ── Lines ──────────────────────────────────────────────── */
+  --rule: rgba(33, 26, 22, 0.16);
+  --rule-soft: rgba(33, 26, 22, 0.08);
+  --rule-strong: rgba(33, 26, 22, 0.34);
+  --rule-cream: rgba(247, 241, 229, 0.18);
+  --rule-cream-soft: rgba(247, 241, 229, 0.09);
+
+  /* ── Type families ──────────────────────────────────────── */
+  /* Khand is an Indian Type Foundry condensed display face — shop-signage
+     proportions, Latin and Devanagari from one drawing. It sets every headline. */
+  --f-display: "Khand", "Arial Narrow", "Helvetica Neue Condensed", sans-serif;
+  --f-body:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  /* Rozha One carries the short expressive lines — the "FOR." and the Hindi. */
+  --f-accent: "Rozha One", "Georgia", "Times New Roman", serif;
+
+  /* ── Type scale ─────────────────────────────────────────────
+     Measured, not guessed: Khand 700 sets "BHATURE" — the longest word in the
+     lockup — at 3.22em after the -0.015em tracking. At 320px the gutter leaves
+     284px of line, and 26.5vw puts the word at 273px: edge to edge with 11px
+     of air, so a fallback face or a slightly different Khand cut still cannot
+     clip it. Everything else is tuned down from there. */
+  --t-hero: clamp(3.4rem, 26.5vw, 15.5rem);
+  --t-display: clamp(2.6rem, 11vw, 7rem);
+  --t-display-sm: clamp(2rem, 8vw, 3.6rem);
+  --t-dish: clamp(1.4rem, 5.6vw, 1.9rem);
+  --t-lede: clamp(1.0625rem, 4vw, 1.375rem);
+  --t-body: clamp(0.9375rem, 3.4vw, 1.0625rem);
+  --t-small: clamp(0.8125rem, 3vw, 0.875rem);
+  --t-label: 0.6875rem;
+
+  --track-label: 0.22em;
+  --track-display: -0.015em;
+  --lh-display: 0.84;
+
+  /* ── Space ──────────────────────────────────────────────── */
+  --gutter: clamp(1.125rem, 5vw, 4.5rem);
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --section-y: clamp(4rem, 11vw, 9rem);
+  --max: 90rem; /* the page never gets wider than this */
+
+  /* ── Shape + motion ─────────────────────────────────────── */
+  --r-sm: 3px;
+  --r-md: 6px;
+  --r-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(33, 26, 22, 0.06), 0 10px 24px -14px rgba(33, 26, 22, 0.28);
+  --shadow-lift: 0 2px 4px rgba(33, 26, 22, 0.08), 0 22px 44px -20px rgba(33, 26, 22, 0.36);
+  --shadow-drawer: 0 -12px 60px -12px rgba(22, 16, 13, 0.45);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.22s;
+  --dur-slow: 0.55s;
+
+  --nav-h: 3.75rem;
+}
+
+@media (min-width: 60rem) {
+  :root {
+    --nav-h: 4.75rem;
+  }
+}
